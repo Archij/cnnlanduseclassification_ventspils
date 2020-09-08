@@ -1,0 +1,1 @@
+# cnnlanduseclassification_ventspils
