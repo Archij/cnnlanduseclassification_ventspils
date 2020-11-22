@@ -1,6 +1,6 @@
 # cnnlanduseclassification_ventspils
 
-Результаты в статье: https://www.researchgate.net/publication/344043328_Land-Use_Classification_using_Convolutional_Neural_Networks.
+Некоторые результаты в статье: https://www.researchgate.net/publication/344043328_Land-Use_Classification_using_Convolutional_Neural_Networks.
 
 Список файлов:
 
@@ -8,6 +8,12 @@ Tiles.py - для разделения аэроортофото изображе
 
 ZonalStatistics.py - чтобы связать каждый фрагмент аэроортофото изображений с соответствующим классом землепользования;
 
-test.py - проверка обученной модели. Входные данные: train.csv с путями к изображениям и значениями классов; Keras модель model.h5 и mapping.pkl;
+MergeRGBCIR.py - объединить RGB аэроортофото изображения с CIR аэроортофото изображениями. Результат: Tiff изображения с 4 полосами;
+
+vmd2d.py - вариационный метод декомпозиции двумерного сигнала (изображений);
+
+MergeRGBCIRVMD.py - объединить Tiff изображения с 4 полосами с изображениями, полученными в результате применения метода декомпозиции 2D VMD. Результат: Tiff изображения с 24 полосами;
+
+test.py - проверка обученной модели CNN. Входные данные: train.csv с путями к изображениям и значениями классов; Keras модель model.h5 и mapping.pkl;
 
 test_results.zip - результаты обученной модели на тестовой выборке данных.
