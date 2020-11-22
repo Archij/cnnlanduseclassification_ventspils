@@ -6,9 +6,9 @@ import os, gdal, sys
 import itertools
 import multiprocessing
 
-in_path = '/home/arturs/Data/RGB1/'
+in_path = '/home/arturs/Data/RGB/'
 input_filename = '4114-14_1.tif'
-os.mkdir('/home/arturs/Data/RGB_Tiles1/')
+os.mkdir('/home/arturs/Data/RGB_Tiles/')
 
 ds = gdal.Open(in_path + input_filename)
 band = ds.GetRasterBand(1)
@@ -33,10 +33,10 @@ def translate(params):
   os.system(com_string)
   return None
 
-filelist = [file for file in os.listdir('/home/arturs/Data/RGB1/') if file.endswith('.tif')]
+filelist = [file for file in os.listdir('/home/arturs/Data/RGB/') if file.endswith('.tif')]
 for file in filelist:
     input_filename = file
-    out_path = '/home/arturs/Data/RGB_Tiles1/' + os.path.splitext(file)[0] + '/' #'/home/arturs/Data/CIR_Tiles/'
+    out_path = '/home/arturs/Data/RGB_Tiles/' + os.path.splitext(file)[0] + '/' #'/home/arturs/Data/CIR_Tiles/'
     os.mkdir(out_path)
     output_filename = os.path.splitext(file)[0]
     #Generate processes equal to the number of cores
